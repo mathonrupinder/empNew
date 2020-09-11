@@ -8,8 +8,6 @@ totalWorkHrs=100
 workhrs=0
 days=0
 echo "Day No.    workhrs     dailyWage         totalWage"
-
-
 while [[ $workhrs -lt $totalWorkHrs && $days -lt $workingdays ]]
 do
         empcheck=$(( RANDOM%3 ))
