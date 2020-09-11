@@ -7,7 +7,7 @@ halfdayhrs=4
 workingdays=25
 totalWorkHrs=100
 workhrs=0
-days=0
+Days=0
 function getworkinghours() {
         case $empcheck in
              $ispartTime)
@@ -18,15 +18,17 @@ function getworkinghours() {
                    echo 0;
       esac
 }
+echo "********************************************************************"
 echo "Day No.     workhrs      dailywage      totalsalary"
-while [[ $workhrs -lt $totalWorkHrs ]] && [[ $days -lt $workingdays ]]
+echo "********************************************************************"
+while [[ $workhrs -lt $totalWorkHrs ]] && [[ $Days -lt $workingdays ]]
 do
       empcheck=$(( RANDOM%3 ))
       dailyhours="$( getworkinghours $empcheck )"
       dailyWage=$(( dailyhours * wageperhr))
       workhrs=$(( workhrs + dailyhours ))
       totalWage=$(( totalWage + dailyWage ))
-      ((days++))
-      echo "Day $days            $workhrs          $dailyWage              $totalWage"
+      ((Days++))
+      echo "Day $Days            $workhrs         $dailyWage               $totalWage"
 done
 
