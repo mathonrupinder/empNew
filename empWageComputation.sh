@@ -23,10 +23,10 @@ while [[ $workhrs -lt $totalWorkHrs ]] && [[ $days -lt $workingdays ]]
 do
       empcheck=$(( RANDOM%3 ))
       dailyhours="$( getworkinghours $empcheck )"
-      dailywage=$(( dailyhours * wageperhr))
+      dailyWage=$(( dailyhours * wageperhr))
       workhrs=$(( workhrs + dailyhours ))
-      totalsalary=$(( totalsalary + dailywage ))
+      totalWage=$(( totalWage + dailyWage ))
       ((days++))
-      echo "Day $days            $workhrs          $dailywage              $totalsalary"
+      echo "Day $days            $workhrs          $dailyWage              $totalWage"
 done
 
